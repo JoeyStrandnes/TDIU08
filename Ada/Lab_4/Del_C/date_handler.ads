@@ -3,7 +3,7 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 
-
+ 
 package date_handler is
 
 type Year_Type is private;
@@ -13,9 +13,9 @@ procedure Get_Time(i: out Year_Type);
 function Next_Date (i: Year_Type) return Year_Type;
 function Previous_Date (i: Year_Type) return Year_Type;
 
-private 
+private
 
-type Year_Type is record 
+type Year_Type is record
 Y: integer:= 0;
 M: integer:= 0;
 D: integer:= 0;

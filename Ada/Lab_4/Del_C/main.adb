@@ -6,7 +6,7 @@ procedure main is
 Date: Year_type;
 
 begin
-
+ 
 
 
 Get_Time(Date);

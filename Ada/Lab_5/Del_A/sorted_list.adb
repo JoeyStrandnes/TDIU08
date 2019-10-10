@@ -3,7 +3,7 @@
 package body sorted_list is
 
 ----------------------------------------------------------
-function Empty (k: List_Type)return boolean is
+function Empty (k: E_Type)return boolean is
 
 begin --Empt
 
@@ -29,8 +29,9 @@ begin -- Insert
 
 
 if Is_Empty then
-
-
+K:= new E_Type;
+K.Val_holder:= j;
+Put(k.Val_holder);
 end if;
 
 end Insert

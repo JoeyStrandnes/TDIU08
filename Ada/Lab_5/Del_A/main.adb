@@ -4,22 +4,14 @@ with sorted_list; use sorted_list;
 
 procedure main is
 
-j: integer;
-
+k: List_Type;
+j: Integer:=10;
 begin
 
 loop
 
-Get(j);
 
-
-
-
-
-
-
-
-
+Insert(k, j);
 
 
 

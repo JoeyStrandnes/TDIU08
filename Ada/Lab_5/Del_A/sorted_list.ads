@@ -4,19 +4,21 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 
 
-package sorted_list is private;
+package sorted_list is
 
+type E_Type is private;
 type List_Type is private;
 
+procedure Insert(k: in out List_Type; j: in out Integer);
 
 private
 
-type Pointer_type is access Integer;
+type List_Type is access E_Type;
 
-type List_Type is record
+type E_Type is record
 
 Val_holder: integer;
-Pointer:= Pointer_type;
+Pointer: List_Type;
 
 end record;
 

@@ -7,11 +7,23 @@ procedure main is
 j: integer;
 
 begin
-  
-loop
-Get(j);
-end loop;
 
+loop
+
+Get(j);
+
+
+
+
+
+
+
+
+
+
+
+
+end loop;
 
 
 end main;

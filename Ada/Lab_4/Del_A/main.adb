@@ -5,33 +5,33 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 procedure main is
 
-type Year_Type is record 
+type Year_Type is record
 Y: integer:= 0;
 M: integer:= 0;
-D: integer:= 0;
+D: integer:= 0; 
 end record;
 
 ----------------------------------------------------------
-procedure Get_Time(i: out Year_Type) is 
+procedure Get_Time(i: out Year_Type) is
 
 G: character;
 
 begin
- 
+
  Get(i.Y);
  Get(G);
  Get(i.M);
  Get(G);
  Get(i.D);
- 
+
 end Get_Time;
 ----------------------------------------------------------
 
-procedure Put_Time(i: in Year_Type) is 
+procedure Put_Time(i: in Year_Type) is
 
 
 begin
-  
+
  Put(i.Y, 0);
  Put("-");
  if i.M < 10 then
@@ -43,7 +43,7 @@ begin
     Put("0");
  end if;
  Put(i.D, 0);
- 
+
 end Put_Time;
 ----------------------------------------------------------
 
@@ -59,24 +59,3 @@ Put_Time(Date);
 
 
 end main;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

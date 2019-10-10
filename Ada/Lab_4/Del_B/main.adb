@@ -5,7 +5,7 @@ with Ada.Float_Text_IO; use Ada.Float_Text_IO;
 
 procedure main is
 
-type Year_Type is record 
+type Year_Type is record
 Y: integer:= 0;
 M: integer:= 0;
 D: integer:= 0;
@@ -14,28 +14,28 @@ end record;
 
 type Month_Size is array (1..12) of integer;
 Day: Month_Size:= (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
-                                   
+
 ----------------------------------------------------------
-procedure Get_Time(i: out Year_Type) is 
+procedure Get_Time(i: out Year_Type) is
 
 G: character;
 
 begin
- 
+
  Get(i.Y);
  Get(G);
  Get(i.M);
  Get(G);
  Get(i.D);
- 
+
 end Get_Time;
 ----------------------------------------------------------
 
-procedure Put_Time(i: in Year_Type) is 
+procedure Put_Time(i: in Year_Type) is
 
 
 begin
-  
+
  Put(i.Y, 0);
  Put("-");
  if i.M < 10 then
@@ -47,7 +47,7 @@ begin
     Put("0");
  end if;
  Put(i.D, 0);
- 
+
 end Put_Time;
 ----------------------------------------------------------
 function Next_Date (i: Year_Type) return Year_Type is
@@ -60,21 +60,21 @@ k:=i;
 
 if (k.D)+1 > Day(k.M) then
 
-    k.M:= k.M +1;  
-    k.D:= 0;  
+    k.M:= k.M +1;
+    k.D:= 0;
 
 end if;
 
 if 12 < k.M then
 
-    k.Y:= k.Y+1;  
-    
+    k.Y:= k.Y+1;
+
 end if;
 
 if k.M > 12 then
    k.M:= 1;
 end if;
-    
+
 k.D:= k.D +1;
 
 return k;
@@ -96,22 +96,22 @@ k:=i;
 if (k.D)-1 = 0 then
 
     k.M:= k.M -1;
-    
+
     if k.M = 0 then
 
-    k.Y:= k.Y-1;  
-    
-    end if;    
-    
+    k.Y:= k.Y-1;
+
+    end if;
+
     if k.M = 0 then
     k.M:=12;
-    end if;  
+    end if;
     if k.M = 1 then
 
-    k.Y:= k.Y-1;  
-    
+    k.Y:= k.Y-1;
+
 end if;
-    k.D:= Day(k.M);  
+    k.D:= Day(k.M);
 
 end if;
 
@@ -120,7 +120,7 @@ end if;
 if k.M > 12 then
    k.M:= 1;
 end if;
-    
+
 k.D:= k.D -1;
 
 return k;
@@ -145,24 +145,3 @@ Put_Time(Date);
 
 
 end main;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

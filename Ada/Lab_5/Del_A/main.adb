@@ -5,17 +5,18 @@ with sorted_list; use sorted_list;
 procedure main is
 
 k: List_Type;
-j: Integer:=10;
+
+
 begin
 
-loop
+Insert(k, 1);
+Insert(k, 3);
+Insert(k, 5);
+Insert(k, 2);
+Insert(k, 4);
+Put_List(K);
 
 
-Insert(k, j);
-
-
-
-end loop;
 
 
 end main;

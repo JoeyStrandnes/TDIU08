@@ -9,7 +9,9 @@ package sorted_list is
 type E_Type is private;
 type List_Type is private;
 
-procedure Insert(k: in out List_Type; j: in out Integer);
+procedure Insert(k: in out List_Type; New_Value: in Integer);
+function Empty(k: List_Type) return boolean;
+Procedure Put_List(k: in List_Type);
 
 private
 

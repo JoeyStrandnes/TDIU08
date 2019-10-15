@@ -56,13 +56,13 @@ end Insert;
 procedure Put_List (k: in List_Type) is
 
 Temp_List: List_Type:= K;
-
+Is_Empty: boolean:= Empty(k);
 begin -- Put
 
-
+if not Is_Empty then
 Put(Temp_List.Val_holder);
 Put_List(Temp_List.Pointer);
-
+end if;
 
 
 

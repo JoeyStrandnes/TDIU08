@@ -11,9 +11,11 @@ begin
 
 Insert(k, 1);
 Insert(k, 3);
-Insert(k, 5);
 Insert(k, 2);
+Insert(k, 5);
 Insert(k, 4);
+
+
 Put_List(K);
 
 

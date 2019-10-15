@@ -92,19 +92,79 @@ Is_Empty: boolean:= Empty(k);
 Temp_Holder: List_Type;
 
 begin
-
+  if Is_Empty then
+    raise Wrong_Input;
+  end if;
   if not Is_Empty then
     if K.Val_holder = Key then
       Temp_Holder:= K;
       K:=Temp_Holder.Pointer;
       Free(Temp_Holder);
-
+      return;
     end if;
 
     Remove(K.pointer, Key);
   end if;
 
+
 end Remove;
+----------------------------------------------------------
+procedure Delete (k: in out List_Type) is
+
+Is_Empty: boolean:= Empty(k);
+
+begin -- Delete
+
+    if not Is_Empty then
+    Free(k);
+    Delete(K);
+    end if;
+    K:=Null;
+
+
+end Delete;
+----------------------------------------------------------
+function Find(k: List_Type; Key: Integer)return Integer  is
+
+  Is_Empty: boolean:= Empty(k);
+  Fuling_Variabel: Integer;
+
+begin --Find
+
+    if Is_Empty then
+      raise Wrong_Input;
+    end if;
+    if not Is_Empty then
+      if K.Val_holder = Key then
+        return K.Val_holder;
+      end if;
+      Fuling_Variabel:= Find(K.pointer, Key);
+    end if;
+    return Fuling_Variabel;
+
+
+end Find;
+----------------------------------------------------------
+Procedure Find(k:in List_Type; Key: in Integer; Output: out Integer) is
+
+begin --Find
+
+Output:= Find(K,key);
+
+end Find;
+----------------------------------------------------------
+function Length(k: in List_Type) return integer is
+Is_Empty: boolean:= Empty(k);
+Counter: integer:=0;
+begin -- Length
+
+  if not Is_Empty then
+  Counter:=Length(k.pointer);
+  Counter:= Counter+1;
+  end if;
+  return Counter;
+
+end Length;
 ----------------------------------------------------------
 
 end sorted_list;

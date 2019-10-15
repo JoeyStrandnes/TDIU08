@@ -10,12 +10,18 @@ package sorted_list is
 type E_Type is private;
 type List_Type is private;
 
+Wrong_Input: exception;
+
 function Empty(k: List_Type) return boolean;
-function Member (k: List_Type; Key: Integer) return boolean;
+function Member(k: List_Type; Key: Integer) return boolean;
+function Find(k: List_Type; Key: Integer) return Integer;
+function Length(k: in List_Type) return integer;
 
 procedure Insert(k: in out List_Type; New_Value: in Integer);
 Procedure Put_List(k: in List_Type);
 Procedure Remove(K: in out List_Type; key: in integer);
+procedure Delete(K: in out List_Type);
+
 private
 
 type List_Type is access E_Type;

@@ -113,15 +113,26 @@ procedure Delete (k: in out List_Type) is
 
 Is_Empty: boolean:= Empty(k);
 
-begin -- Delete
+Temp_Holder: List_Type:= null;
 
-    if not Is_Empty then
-    Free(k);
-    Delete(K);
-    end if;
-    K:=Null;
+begin
 
+  if K.pointer = null then
+    return;
+  end if;
 
+  if Is_Empty then
+    raise Wrong_Input;
+
+  elsif not Is_Empty then
+      Temp_Holder:= K.Pointer;
+      Free(K);
+      K:=Temp_Holder;
+
+      Delete(K);
+
+  end if;
+  free(k);
 end Delete;
 ----------------------------------------------------------
 function Find(k: List_Type; Key: Integer)return Integer  is

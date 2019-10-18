@@ -7,7 +7,6 @@ with Ada.Unchecked_Deallocation;
 
 package sorted_list is
 
-type E_Type is private;
 type List_Type is private;
 
 Wrong_Input: exception;
@@ -23,6 +22,7 @@ Procedure Remove(K: in out List_Type; key: in integer);
 procedure Delete(K: in out List_Type);
 
 private
+type e_type;
 
 type List_Type is access E_Type;
 

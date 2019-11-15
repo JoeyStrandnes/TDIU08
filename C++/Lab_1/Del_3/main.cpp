@@ -1,18 +1,52 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <ctype.h>
 #include <cmath>
+#include <ctype.h>
 
 using namespace std;
 
 int main(){
 
-std::cout << "Indata innehöll: " << '\n';
-std::cout << "Alfabetiska tecken: 553 " << '\n';
-std::cout << "Siffertecken......: 11" << '\n';
-std::cout << "Vita tecken.......: 352" << '\n';
-std::cout << "Tecken totalt.....: 1144 " << '\n';
+char Text;
+int Alpha{0};
+int Num{0};
+int White{0};
+int Total{0};
+
+  cout << "Mata in texten: ";
+
+
+  while (cin >> Text) {
+
+      if (isalpha(Text)) {
+        Alpha++;
+
+      } else if(isalnum(Text)){
+        Num++;
+      }else if (isspace(Text)) {
+        White++;
+      }
+
+      Total++;
+
+  }
+
+
+if (Text.length() == 0) {
+  cout << "ERROR åt hälvette" << '\n';
+
+
+}else{
+    cout  << '\n';
+    std::cout << "Indata innehöll: " <<'\n';
+    std::cout << "Alfabetiska tecken: " << Alpha  << '\n';
+    std::cout << "Siffertecken......: " << Num    << '\n';
+    std::cout << "Vita tecken.......: " << White  << '\n';
+    std::cout << "Tecken totalt.....: " << Total  << '\n';
+  }
+
+
 
   while (1) {
     /* code */

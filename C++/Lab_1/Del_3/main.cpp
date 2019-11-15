@@ -17,7 +17,7 @@ int Total{0};
   cout << "Mata in texten: ";
 
 
-  while (cin >> Text) {
+  while (cin.get(Text)) {
 
       if (isalpha(Text)) {
         Alpha++;
@@ -33,18 +33,14 @@ int Total{0};
   }
 
 
-if (Text.length() == 0) {
-  cout << "ERROR åt hälvette" << '\n';
 
 
-}else{
     cout  << '\n';
     std::cout << "Indata innehöll: " <<'\n';
     std::cout << "Alfabetiska tecken: " << Alpha  << '\n';
     std::cout << "Siffertecken......: " << Num    << '\n';
     std::cout << "Vita tecken.......: " << White  << '\n';
     std::cout << "Tecken totalt.....: " << Total  << '\n';
-  }
 
 
 

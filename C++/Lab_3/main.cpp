@@ -5,33 +5,35 @@
 #include <iterator>
 //#include <string>
 
+/*
+⠀⠀⠀⣖⠲⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠉⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠸⡆⠹⡀⣠⢤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⡧⢤⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡧⢄⣹⣅⣜⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠁⠀⢹⠚⠃⠀⠀⠀⠀⠀
+⠀⣀⠴⢒⣉⡹⣶⣤⣀⡉⠉⠒⠒⠒⠤⠤⣀⣀⣀⠇⠀⠀⢸⠠⣄⠀⠀⠀⠀⠀
+⠀⠈⠉⠁⠀⠀⠀⠉⠒⠯⣟⣲⠦⣤⣀⡀⠀⠀⠈⠉⠉⠉⠛⠒⠻⢥⣀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⣲⡬⠭⠿⢷⣦⣤⢄⣀⠀⠀⠚⠛⠛⠓⢦⡀
+⠀⠀⠀⠀⠀⠀⠀⢀⣀⠤⠴⠚⠉⠁⠀⠀⠀⠀⣀⣉⡽⣕⣯⡉⠉⠉⠑⢒⣒⡾
+⠀⠀⣀⡠⠴⠒⠉⠉⠀⢀⣀⣀⠤⡤⢶⣶⣋⠉⠉⠀⠀⠀⠈⠉⠉⠉⠉⠉⠁⠀
+⣖⣉⣁⣠⠤⠶⡶⡶⢍⡉⠀⠀⠀⠙⠒⠯⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠁⠀⠀⠀⠀⠑⢦⣯⠇
+*/
 
 using namespace std;
 
 struct Person{
-
-string For_Namn{};
-string Efter_Namn{};
-string Klubb{};
-
+  string For_Namn{};
+  string Efter_Namn{};
+  string Klubb{};
 };
-
-vector<Person> Cont{};
-
-string Holder{};
-string F_Namn{};
-string E_Namn{};
-string K_lubb{};
-
 
 void Print_Cont(vector <Person> & Cont){
 
   random_device rd;
-  mt19937 g(rd());
+  mt19937 g(rd()); //Slumpad seed
 
   shuffle (Cont.begin(), Cont.end(), g);
   cout << '\n';
-  cout << "Startlista: " << '\n';
+  cout << "Startlista:  ᕕ( ՞ ᗜ ՞ )ᕗ" << '\n';
   cout << "Startnummer Förnamn Efternamn Klubb" << '\n';
 
   for (int i {}; i <= Cont.size()-1; i++){
@@ -44,8 +46,16 @@ void Print_Cont(vector <Person> & Cont){
 
 }
 
-
 int main() {
+
+
+
+vector<Person> Cont{};
+
+string Holder{};
+string F_Namn{};
+string E_Namn{};
+string K_lubb{};
 
 cout << "Anmälning, mata in deltagare: " << '\n';
 
@@ -61,9 +71,6 @@ while (cin >> F_Namn) {
 }
 
 Print_Cont(Cont);
-
-
-
 
   //return 0;
   while (1) {

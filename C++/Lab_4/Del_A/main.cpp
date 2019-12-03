@@ -3,12 +3,7 @@
 
 
 
-struct Hero(){
 
-
-
-
-};
 
 
 int main(){

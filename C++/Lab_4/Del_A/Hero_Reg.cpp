@@ -6,11 +6,12 @@
 
 using namespace std;
 
-vector<Hero_Register> All_Heroes{};
 
-vector Hero_IN(){
 
-  struct Hero_Register Hero_TMP{};
+vector<Hero_Type> Hero_IN(){
+
+  struct Hero_Type Hero_TMP{};
+  vector<Hero_Type> Hero_reg;
 
   fstream Heroes;
   Heroes.open("Register.txt", fstream::in);
@@ -27,23 +28,45 @@ vector Hero_IN(){
 
   Heroes >> Temp_String;
   Heroes >> Temp_String;
-  //Heroes >> Hero_TMP.Species;
-  //Heroes >> Hero_TMP.Eye_Color;
+
 
   getline(Heroes, Temp_String);
   stringstream KUL(Temp_String);
-
-  cout << Hero_TMP.Name << '\n';
 
   while (KUL >> int_Holder) {
   Hero_TMP.Intressen.push_back(int_Holder);
   }
 
 
-  All_Heroes.push_back(Hero_TMP);
+  Hero_reg.push_back(Hero_TMP);
+  Hero_TMP.Intressen.clear();
 }
 
+return Hero_reg;
 
-return All_Heroes;
+}
+
+void Match(vector<Hero_Type> TEMP, vector<int> numbers){
+int Kalle{};
+fstream matches;
+matches.open("RESULT.TXT", fstream::out);
+
+
+for (int g=0; g<numbers.size(); g++)
+{
+  for (int i=0; i<TEMP.size(); i++)
+  {
+    for (int k{0}; k < TEMP.at(i).Intressen.size(); k++)
+    {
+
+      if(numbers.at(g) == TEMP.at(i).Intressen.at(k))
+      {
+        matches << TEMP.at(i).Name << endl;
+
+      }
+    }
+  }
+}
+matches.close();
 
 }

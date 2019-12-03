@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-struct Hero_Register{
+struct Hero_Type{
 string Name{};
 int Age{};
 char Sex{};
@@ -16,6 +16,7 @@ vector<int> Intressen{};
 //enum Eye_Color{Blue, Green, Brown, Gray, Yellow, Red, Black, Crazy};
 };
 
-vector<Hero_Register> All_Heroes{};
+//vector<Hero_Type> All_Heroes{};
 
-Hero_Register Hero_IN();
+vector<Hero_Type> Hero_IN();
+void Match(vector<Hero_Type>, vector<int>);

@@ -16,6 +16,8 @@ int x = -1;
 
 vector<int>Bengt{};
 
+TEMP = Hero_IN();
+
 cout << "Välkommen till Hero Match­Maker 3000!" << '\n';
 cout << "Välj ett alternativ: " << '\n';
 cout << "  A) Mata in en ny hjälte" << '\n';
@@ -23,13 +25,11 @@ cout << "  B) Hitta matchande hjältar" << '\n';
 cout << "Välj ett alternativ: ";
 cin >> Val;
 
-TEMP = Hero_IN();
-
-if (Val = 'A')
+if (Val == 'A')
 {
   //Mata in ny hjälte
   add(TEMP);
-} else {
+} else if (Val== 'B'){
 std::cin >> Temp_String;
   while (x!=0)
   {

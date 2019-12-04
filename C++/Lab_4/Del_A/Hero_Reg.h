@@ -20,3 +20,5 @@ vector<int> Intressen{};
 
 vector<Hero_Type> Hero_IN();
 void Match(vector<Hero_Type>, vector<int>);
+
+void add(vector<Hero_Type>&);

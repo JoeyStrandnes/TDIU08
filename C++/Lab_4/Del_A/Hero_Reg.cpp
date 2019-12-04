@@ -62,6 +62,7 @@ for (int g=0; g<numbers.size(); g++)
       if(numbers.at(g) == TEMP.at(i).Intressen.at(k))
       {
         matches << TEMP.at(i).Name << endl;
+        TEMP.at(i).Intressen.clear();
 
       }
     }
@@ -69,4 +70,41 @@ for (int g=0; g<numbers.size(); g++)
 }
 matches.close();
 
+}
+
+
+
+void add(vector<Hero_Type>& TEMP)
+{
+  int intHolder{};
+
+  struct Hero_Type Hero_TMP{};
+  std::cout << "Mata in namn: ";
+  cin >> Hero_TMP.Name;
+  std::cout << "Mata in ålder: ";
+  cin >> Hero_TMP.Age;
+  std::cout << "Mata in kön (M/F): ";
+  cin >> Hero_TMP.Sex;
+  std::cout << "Mata in vikt: ";
+  cin >> Hero_TMP.Weight;
+  std::cout << "Mata in hårfärg: ";
+  cin >> Hero_TMP.Hair_Color;
+
+  std::cout << "Mata in intressen (max 10): ";
+  while (cin >> intHolder)
+  {
+    Hero_TMP.Intressen.push_back(intHolder);
+  }
+
+  TEMP.push_back(Hero_TMP);
+  fstream adder;
+  adder.open("Register.txt", fstream::app);
+  adder << Hero_TMP.Name << " " << Hero_TMP.Age << " " << Hero_TMP.Sex << " " << Hero_TMP.Weight << " " << Hero_TMP.Hair_Color << " ";
+
+  for(int i=0; i < Hero_TMP.Intressen.size(); i++)
+  {
+    adder<<Hero_TMP.Intressen.at(i);
+    adder<<" ";
+  }
+  adder.close();
 }

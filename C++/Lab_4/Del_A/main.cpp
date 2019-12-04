@@ -4,8 +4,6 @@
 
 using namespace std;
 
-
-
 vector<Hero_Type> TEMP;
 string Temp_String{};
 //stringstream Val(Temp_String);
@@ -24,17 +22,25 @@ cout << "  A) Mata in en ny hjälte" << '\n';
 cout << "  B) Hitta matchande hjältar" << '\n';
 cout << "Välj ett alternativ: ";
 cin >> Val;
-std::cin >> Temp_String;
-
-while (x!=0)
-{
-  cin >> x;
-  Bengt.push_back(x);
-}
 
 TEMP = Hero_IN();
 
-for (int i=0; i < 30; i++) {
+if (Val = 'A')
+{
+  //Mata in ny hjälte
+  add(TEMP);
+} else {
+std::cin >> Temp_String;
+  while (x!=0)
+  {
+    cin >> x;
+    Bengt.push_back(x);
+  }
+  Match(TEMP, Bengt);
+}
+
+// Skriv ut alla 30 hjältar + "vige" om "vige" är tillagd
+for (int i=0; i < 31; i++) {
   cout << TEMP.at(i).Name;
   cout << TEMP.at(i).Age;
   cout << TEMP.at(i).Sex;
@@ -46,10 +52,5 @@ for (int i=0; i < 30; i++) {
   }
   cout << '\n';
 }
-
-Match(TEMP, Bengt);
-
-//Hero_IN();
-//std::cout << "KLAR" << '\n';
 
 }

@@ -2,12 +2,11 @@
 #include <sstream>
 #include <fstream>
 #include "Hero_Reg.h"
-
+//#include "Header_Fil2.h"
 
 using namespace std;
 
-
-
+/*
 vector<Hero_Type> Hero_IN(){
 
   struct Hero_Type Hero_TMP{};
@@ -45,7 +44,7 @@ vector<Hero_Type> Hero_IN(){
 return Hero_reg;
 
 }
-
+*/
 void Match(vector<Hero_Type> TEMP, vector<int> numbers){
 int Kalle{};
 fstream matches;
@@ -61,7 +60,17 @@ for (int g=0; g<numbers.size(); g++)
 
       if(numbers.at(g) == TEMP.at(i).Intressen.at(k))
       {
-        matches << TEMP.at(i).Name << endl;
+        matches << TEMP.at(i).Name;
+        matches << "   " <<  TEMP.at(i).Age;
+        matches << "   " <<  TEMP.at(i).Sex;
+        matches << "   " <<  TEMP.at(i).Weight;
+        matches << "   " <<  TEMP.at(i).Hair_Color;
+
+        for (int k{0}; k < TEMP.at(i).Intressen.size(); k++){
+          matches << TEMP.at(i).Intressen.at(k)<< " ";
+        }
+
+        matches << endl;
         TEMP.at(i).Intressen.clear();
 
       }

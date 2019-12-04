@@ -1,10 +1,13 @@
 #include <iostream>
-#include "Hero_Reg.h"
 #include <string>
+#include <fstream>
+#include "Hero_Reg.h"
+//#include "Header_Fil2.h"
 
 using namespace std;
 
 vector<Hero_Type> TEMP;
+Hero_Type TEMP2;
 string Temp_String{};
 //stringstream Val(Temp_String);
 
@@ -12,11 +15,20 @@ string Temp_String{};
 int main(){
 
 char Val{};
-int x = -1;
+int x = 1;
 
 vector<int>Bengt{};
 
-TEMP = Hero_IN();
+fstream Heroes;
+Heroes.open("Register.txt", fstream::in);
+
+for (size_t i = 0; i < 30; i++) {
+  TEMP2 = Hero_IN(Heroes);
+  TEMP.push_back(TEMP2);
+}
+
+Heroes.close();
+
 
 cout << "Välkommen till Hero Match­Maker 3000!" << '\n';
 cout << "Välj ett alternativ: " << '\n';
@@ -30,17 +42,18 @@ if (Val == 'A')
   //Mata in ny hjälte
   add(TEMP);
 } else if (Val== 'B'){
-std::cin >> Temp_String;
+//std::cin >> Temp_String;
   while (x!=0)
   {
     cin >> x;
+    std::cout << x << '\n';
     Bengt.push_back(x);
   }
   Match(TEMP, Bengt);
 }
 
 // Skriv ut alla 30 hjältar + "vige" om "vige" är tillagd
-for (int i=0; i < 31; i++) {
+for (int i=0; i < TEMP.size(); i++) {
   cout << TEMP.at(i).Name;
   cout << TEMP.at(i).Age;
   cout << TEMP.at(i).Sex;

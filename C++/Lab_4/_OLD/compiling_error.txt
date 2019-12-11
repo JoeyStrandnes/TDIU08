@@ -1,0 +1,22 @@
+/home/josst471/TDIU08/TDIU08/C++/Lab_4/Del_A/main.cpp: In function ‘int main()’:
+/home/josst471/TDIU08/TDIU08/C++/Lab_4/Del_A/main.cpp:32:22: error: no match for ‘operator=’ (operand types are ‘std::vector<Hero_Type>’ and ‘Hero_Type’)
+ TEMP = Hero_IN(Heroes);
+                      ^
+In file included from /usr/include/c++/7/vector:69:0,
+                 from /home/josst471/TDIU08/TDIU08/C++/Lab_4/Del_A/Hero_Reg.h:2,
+                 from /home/josst471/TDIU08/TDIU08/C++/Lab_4/Del_A/main.cpp:4:
+/usr/include/c++/7/bits/vector.tcc:179:5: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = Hero_Type; _Alloc = std::allocator<Hero_Type>]
+     vector<_Tp, _Alloc>::
+     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/vector.tcc:179:5: note:   no known conversion for argument 1 from ‘Hero_Type’ to ‘const std::vector<Hero_Type>&’
+In file included from /usr/include/c++/7/vector:64:0,
+                 from /home/josst471/TDIU08/TDIU08/C++/Lab_4/Del_A/Hero_Reg.h:2,
+                 from /home/josst471/TDIU08/TDIU08/C++/Lab_4/Del_A/main.cpp:4:
+/usr/include/c++/7/bits/stl_vector.h:461:7: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = Hero_Type; _Alloc = std::allocator<Hero_Type>]
+       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+       ^~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:461:7: note:   no known conversion for argument 1 from ‘Hero_Type’ to ‘std::vector<Hero_Type>&&’
+/usr/include/c++/7/bits/stl_vector.h:482:7: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = Hero_Type; _Alloc = std::allocator<Hero_Type>]
+       operator=(initializer_list<value_type> __l)
+       ^~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:482:7: note:   no known conversion for argument 1 from ‘Hero_Type’ to ‘std::initializer_list<Hero_Type>’

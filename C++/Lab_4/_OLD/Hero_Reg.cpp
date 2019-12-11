@@ -55,9 +55,9 @@ for (int g=0; g<numbers.size(); g++)
 {
   for (int i=0; i<TEMP.size(); i++)
   {
+    //std::cout << TEMP.at(i).Intressen.size() << '\n';
     for (int k{0}; k < TEMP.at(i).Intressen.size(); k++)
     {
-
       if(numbers.at(g) == TEMP.at(i).Intressen.at(k))
       {
         matches << TEMP.at(i).Name;
@@ -115,5 +115,6 @@ void add(vector<Hero_Type>& TEMP)
     adder<<Hero_TMP.Intressen.at(i);
     adder<<" ";
   }
+  adder << '\n';
   adder.close();
 }

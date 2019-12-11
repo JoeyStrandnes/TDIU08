@@ -9,3 +9,4 @@ using namespace std;
 
 void Match(vector<Hero_Type>, vector<int>);
 void add(vector<Hero_Type>&);
+vector <Hero_Type> Hero_IN();

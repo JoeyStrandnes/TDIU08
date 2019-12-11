@@ -1,6 +1,9 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <sstream>
+#include <iostream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -13,9 +16,4 @@ char Sex{};
 int Weight{};
 string Hair_Color{};
 vector<int> Intressen{};
-//enum Species{Human, Elf, Orc, Halfling, Ogre, Lizardman};
-//enum Eye_Color{Blue, Green, Brown, Gray, Yellow, Red, Black, Crazy};
 };
-
-//vector<Hero_Type> Hero_IN();
-Hero_Type Hero_IN(fstream &);

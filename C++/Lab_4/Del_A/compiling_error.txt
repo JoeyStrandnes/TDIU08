@@ -1,3 +1,0 @@
-/tmp/ccSARuOf.o: In function `main':
-main.cpp:(.text+0xc9): undefined reference to `Hero_IN()'
-collect2: error: ld returned 1 exit status
